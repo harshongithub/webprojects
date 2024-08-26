@@ -13,10 +13,11 @@ db = SQLAlchemy(model_class=Base)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", "sqlite:///contact-list.db")
 db.init_app(app)
 
-class contact(db.Model):
-    email:Mapped[str]=mapped_column(String(50),nullable=False)
-    name: Mapped[str] =mapped_column(String(50),nullable=False)
-    number:Mapped[int]=mapped_column(Integer,primary_key=True)
+class Contact(db.Model):
+    __tablename__ = 'contact'  # optional: specify table name
+    email = db.Column(db.String(50), nullable=False)
+    name = db.Column(db.String(50), nullable=False)
+    number = db.Column(db.Integer, primary_key=True)
 
 
 with app.app_context():
@@ -27,13 +28,17 @@ with app.app_context():
 def home():
     return render_template("index.html")
 
-@app.route("/success", methods=["GET","POST"])
+@app.route("/success", methods=["GET", "POST"])
 def receive_data():
     if request.method == "POST":
-        data = contact(name=request.form["username"], email=request.form["email"], number=request.form["contact_number"])
-        db.session.add(data)
-        db.session.commit()
-        return render_template("success.html")
+        try:
+            data = Contact(name=request.form["username"], email=request.form["email"], number=request.form["contact_number"])
+            db.session.add(data)
+            db.session.commit()
+            return render_template("success.html")
+        except Exception as e:
+            db.session.rollback()  # Rollback session on error
+            return f"An error occurred: {str(e)}", 500
     else:
         return redirect(url_for("home"))
     
