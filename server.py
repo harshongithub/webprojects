@@ -13,6 +13,10 @@ db = SQLAlchemy(model_class=Base)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", "sqlite:///contact-list.db")
 db.init_app(app)
 
+with app.app_context():
+    db.drop_all()  # Drops all tables
+    db.create_all()  # Creates all tables based on the updated model
+
 class Contact(db.Model):
     __tablename__ = 'contact'  # optional: specify table name
     email = db.Column(db.String(50), nullable=False)
