@@ -1,0 +1,169 @@
+body{
+    background-color:#D6E7FF;
+    margin: 0px;
+    padding: 0px;
+}
+
+.my_intro {
+    background-color: #FFFFFF;
+    position: relative; /* Ensure positioning context for absolute positioning */
+    overflow: hidden; /* Hide any overflowing content */
+    padding: 20px; /* Adjust padding as needed */
+    height: 100vh; /* Use vh for responsive height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(300deg, #D6E7FF, #ebdbab,#0078f9);
+    background-size: 180% 180%;
+    animation: gradient-animation 20s ease infinite;
+}
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.blur_container {
+    padding: 1rem;
+    position: relative;
+    width: 100%; /* Adjust width to be responsive */
+    max-width: 35rem; /* Maximum width for larger screens */
+    max-height: 35rem; /* Maximum height for larger screens */
+    height: auto; /* Allow height to adjust based on content */
+    text-align: center;
+    border-color: #EAF6F6;
+    border-radius: 20px;
+    border: 1px solid rgba(198, 198, 198, 0.4);
+    background: rgba(230, 230, 230, 0.3); /* Light transparent background */
+    backdrop-filter: blur(20px);
+    background-size: cover;
+    overflow: hidden;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+.container1 {
+    margin-top: 1rem;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.5); /* Light transparent background */
+    border-color: #EAF6F6;
+    border-radius: 20px;
+    border: 2px solid rgba(225, 225, 225, 0.2);;
+    margin-left: 1em;
+    padding: 0em;
+    position: fixed;
+    z-index: 4;
+}
+
+
+.nav-pills .nav-link {
+    color: #000000;
+    transition: background-color ease, color ease;
+}
+
+.nav-pills .nav-link:hover {
+    background-color: rgba(13, 110, 253); /* Add the hover effect */
+    color: #ffffff; /* Change text color on hover */
+    border-radius: 25px;
+}
+#doc,#az,#css,#c,#dj,#py,#fg,#js{
+    width: 12rem;
+    position: absolute;
+    z-index: 1;
+    transform: translateX(50%,-50%) rotate(0deg);
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+}
+#bg{
+    position: absolute;
+    z-index: 0;
+    bottom: -25%; /* Stick to the bottom */
+    transform: translateX(50%,-50%); /* Center the background horizontally */
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 2s;
+}
+
+#doc{
+    top: 0%; /* Initial top position */
+    left: 45%;
+}
+
+#az{
+    top: 30%;
+    left: 10%;
+    
+}
+#fg{
+    top: 30%;
+    left: 80%;
+}
+#css{
+    left: 10%;
+    top: 70%;
+}
+#c{
+    left:80%;
+    top: 70%;
+}
+#dj{
+    top: 0%; /* Initial top position */
+    left: 10%;
+
+}
+#py{
+    top: 0%; /* Initial top position */
+    left: 80%;
+}
+@media (max-width: 1600px) {
+
+    #bg {
+        bottom: -30%;
+    }
+}
+@media (max-width: 1024px) {
+    .my_intro{
+        height: 90vh;
+    }
+    #bg {
+        bottom: -20%;
+    }
+}
+
+@media (max-width: 768px) {
+    #bg {
+        bottom: -20%;
+    }
+    .my_intro{
+        height: 90vh;
+    }
+    .blur_container {
+        width: 95%; /* Increase width on smaller screens */
+        max-width: none; /* Remove max-width constraint */
+        max-height: 25rem; /* Adjust max-height */
+    }
+    #doc, #az, #fg, #css, #c, #dj, #py{
+        width: 8rem; /* Smaller images on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #bg {
+        max-width: 50rem; /* Further reduce size on very small screens */
+        bottom: 0%; /* Adjust position for very small screens */
+    }
+
+    #doc, #az, #fg, #css, #c, #dj, #py {
+        width: 6rem; /* Further reduce size on very small screens */
+    }
+}
+.carousel-img {
+    height:30rem; /* Set a fixed height */
+    object-fit: cover; /* Ensure the image covers the space without distortion */
+}
