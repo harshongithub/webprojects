@@ -32,14 +32,14 @@ def home():
 @app.route("/success", methods=["GET", "POST"])
 def receive_data():
     if request.method == "POST":
-        try:
-            data = Contact(name=request.form["username"], email=request.form["email"], number=request.form["contact_number"])
-            db.session.add(data)
-            db.session.commit()
-            return render_template("success.html")
-        except Exception as e:
-            db.session.rollback()  # Rollback session on error
-            return f"An error occurred: {str(e)}", 500
+        # try:
+        data = Contact(name=request.form["username"], email=request.form["email"], number=request.form["contact_number"])
+        db.session.add(data)
+        db.session.commit()
+        return render_template("success.html")
+        # except Exception as e:
+        #     db.session.rollback()  # Rollback session on error
+        #     return f"An error occurred: {str(e)}", 500
     else:
         return redirect(url_for("home"))
     
