@@ -17,7 +17,7 @@ class Contact(db.Model):
     __tablename__ = 'contact'  # optional: specify table name
     email = db.Column(db.String(50), nullable=False)
     name = db.Column(db.String(50), nullable=False)
-    number = db.Column(db.Integer, primary_key=True)
+    number = db.Column(db.BigInteger, primary_key=True)
 
 
 with app.app_context():
