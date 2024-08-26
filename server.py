@@ -36,7 +36,7 @@ def receive_data():
         data = Contact(name=request.form["username"], email=request.form["email"], number=request.form["contact_number"])
         db.session.add(data)
         db.session.commit()
-        return render_template("success.html")
+        return render_template("Success.html")
         # except Exception as e:
         #     db.session.rollback()  # Rollback session on error
         #     return f"An error occurred: {str(e)}", 500
