@@ -16,9 +16,8 @@ db.init_app(app)
 class contact(db.Model):
     email:Mapped[str]=mapped_column(String(50),nullable=False)
     name: Mapped[str] =mapped_column(String(50),nullable=False)
-    number:Mapped[int]=mapped_column(Integer,nullable=False)
+    number:Mapped[int]=mapped_column(Integer,primary_key=True)
 
-    __table_args__=(PrimaryKeyConstraint("number","email")),
 
 with app.app_context():
     db.create_all()
