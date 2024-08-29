@@ -3,7 +3,7 @@ var tl = gsap.timeline({scrollTrigger:{
     start: "0% 40%", // When the top of the #doc hits the top of the viewport
     end: "25% 50%", // When the bottom of the #doc hits the top of the viewport
     scrub: true, // Smoothly animate based on scroll position
-     markers: true, // Optional: Show start and end markers for debugging
+     markers: false, // Optional: Show start and end markers for debugging
 }});
 
 tl.to("#doc", {
