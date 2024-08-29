@@ -1,7 +1,7 @@
-body{
+html, body{
     background-color:#D6E7FF;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 .my_intro {
@@ -33,7 +33,7 @@ body{
     padding: 1rem;
     position: relative;
     width: 100%; /* Adjust width to be responsive */
-    max-width: 35rem; /* Maximum width for larger screens */
+    max-width: 45rem; /* Maximum width for larger screens */
     max-height: 35rem; /* Maximum height for larger screens */
     height: auto; /* Allow height to adjust based on content */
     text-align: center;
@@ -122,47 +122,45 @@ body{
     left: 80%;
 }
 @media (max-width: 1600px) {
-
+        .my_intro{
+        height: 60vh;
+    }
     #bg {
-        bottom: -30%;
+        bottom: -10%;
     }
 }
 @media (max-width: 1024px) {
     .my_intro{
-        height: 90vh;
+        height: 70vh;
     }
     #bg {
-        bottom: -20%;
+        bottom: -5%;
     }
-}
+    #dj, #az, #css{
+        left:0%
+    }
+    #doc{
+    left: 42%;
+    }
+
 
 @media (max-width: 768px) {
     #bg {
         bottom: -20%;
     }
     .my_intro{
-        height: 90vh;
+        height: 50vh;
     }
     .blur_container {
-        width: 95%; /* Increase width on smaller screens */
+        width: 90%; /* Increase width on smaller screens */
         max-width: none; /* Remove max-width constraint */
-        max-height: 25rem; /* Adjust max-height */
+        max-height: 50rem; /* Adjust max-height */
     }
     #doc, #az, #fg, #css, #c, #dj, #py{
         width: 8rem; /* Smaller images on smaller screens */
     }
 }
 
-@media (max-width: 480px) {
-    #bg {
-        max-width: 50rem; /* Further reduce size on very small screens */
-        bottom: 0%; /* Adjust position for very small screens */
-    }
-
-    #doc, #az, #fg, #css, #c, #dj, #py {
-        width: 6rem; /* Further reduce size on very small screens */
-    }
-}
 .carousel-img {
     height:30rem; /* Set a fixed height */
     object-fit: cover; /* Ensure the image covers the space without distortion */
