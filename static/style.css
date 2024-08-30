@@ -3,7 +3,10 @@ html, body{
     margin: 0;
     padding: 0;
 }
-
+h2{
+    font-size: 40px;
+    font-weight: bold;
+}
 .my_intro {
     background-color: #FFFFFF;
     position: relative; /* Ensure positioning context for absolute positioning */
@@ -122,12 +125,10 @@ html, body{
     left: 80%;
 }
 @media (max-width: 1600px) {
-        .my_intro{
-        height: 60vh;
-    }
     #bg {
-        bottom: -10%;
+        bottom: -45%;
     }
+
 }
 @media (max-width: 1024px) {
     .my_intro{
