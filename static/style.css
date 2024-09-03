@@ -67,6 +67,12 @@ h2{
     z-index: 4;
 }
 
+.carousel-img {
+    height: 30rem; /* Adjust this to your preferred height */
+    width: auto; /* Ensure the width scales accordingly */
+    max-width: 100%; /* Keep the image responsive */
+    object-fit: cover;
+}
 
 .nav-pills .nav-link {
     color: #000000;
@@ -162,7 +168,3 @@ h2{
     }
 }
 
-.carousel-img {
-    height:30rem; /* Set a fixed height */
-    object-fit: cover; /* Ensure the image covers the space without distortion */
-}
